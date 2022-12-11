@@ -26,3 +26,18 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
   
 
 }
+
+//retourne un vecteur de unsigned int qui contient [profit p, compagnie i, cout m]
+std::vector<unsigned int> find_max_profit(const std::vector<std::vector<unsigned int> >& profits){
+  std::vector<unsigned int> max = {0, 0, 0};
+  for(int i = 0; i < profits.size(); i++){
+    for(int j = 0; j < profits[i].size(); j++){
+      if(profits[i][j] > max[0]){
+        max[0] = profits[i][j];
+        max[1] = i;
+        max[2] = j;
+      }
+    }
+  }
+  return max;
+}
