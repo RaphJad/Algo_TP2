@@ -8,6 +8,24 @@
 
 // Parametres:
 //   profits: profits[i][m] = le profit d'investir m dollars dans l'entreprise i
+//   montants: le montant que vous voulez investir dans l'entreprise i pour maximiser les profits.
+std::vector<std::vector<unsigned int>> update_profits(const std::vector<std::vector<unsigned int> >& profits, std::vector<unsigned int>& montants){
+  /*
+  mettre à jours le tableau profit:
+    pour ce faie, on parcourt le tableau montant, s'il y a une valeur différente de zero
+    on supprime la ligne de la compagnie correspondante
+  */
+  std::vector<std::vector<unsigned int>> updated_profits;
+  for(int i = 0; i < montants.size(); i++){
+    if(montants[i] == 0){
+      updated_profits.push_back(profits[i]);
+    }
+  }
+  return updated_profits;
+}
+
+// Parametres:
+//   profits: profits[i][m] = le profit d'investir m dollars dans l'entreprise i
 //   montants: parametre de sortie: montants[i] est le montant que vous voulez investir dans l'entreprise i pour maximiser les profits.
 void investissement(const std::vector<std::vector<unsigned int> >& profits, std::vector<unsigned int>& montants) {
   assert(profits.size() > 0 && profits.front().size() > 0);
@@ -23,6 +41,9 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
   //   // "release" est ce qui s'approche le plus de l'option -O3 avec g++
   //   assert(i->size() == budget + 1);
   // }
+  //on teste les cas de base de la réccurence
+  //on met à jours le tableau des profits en fonction de ce que l'on a trouvé précédement
+  std::vector<std::vector<unsigned int>> updated_profits = update_profits(profits, montants);
   
 
 }
