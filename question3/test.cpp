@@ -25,24 +25,24 @@ int main () {
                                 0, 1, 2, 2}; // Entreprise 2
     std::vector<std::vector<unsigned int> > vecteur_profits;
     convertion_en_vecteur(profits, nb_entreprises, budget, vecteur_profits);
-    std::vector<unsigned int> max = find_max_profit(vecteur_profits, 3);
-    //hello
-    std::cout << max[0] << std::endl;
-    std::cout << max[1] << std::endl;
-    std::cout << max[2] << std::endl;
+    // std::vector<unsigned int> max = find_max_profit(vecteur_profits, 3);
+    // //hello
+    // std::cout << max[0] << std::endl;
+    // std::cout << max[1] << std::endl;
+    // std::cout << max[2] << std::endl;
     std::vector<unsigned int> montants;
     for(int i = 0; i < vecteur_profits[0].size()-1; i++){
         montants.push_back(0);
         std::cout << montants[i];
     }
     std::cout << std::endl;
-    std::vector<std::vector<unsigned int>> updated_profits = update_profits(vecteur_profits, montants);
-    for(int i = 0; i < updated_profits.size(); i++){
-        for(int j = 0; j < updated_profits[i].size(); j++){
-            std::cout << updated_profits[i][j];
-        }
-        std::cout << std::endl;
-    }
+    // std::vector<std::vector<unsigned int>> updated_profits = update_profits(vecteur_profits, montants);
+    // for(int i = 0; i < updated_profits.size(); i++){
+    //     for(int j = 0; j < updated_profits[i].size(); j++){
+    //         std::cout << updated_profits[i][j];
+    //     }
+    //     std::cout << std::endl;
+    // }
     investissement(vecteur_profits, montants);
     std::cout << "vecteur v : ";
     for(int i = 0; i < montants.size(); i++){
