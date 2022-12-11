@@ -18,11 +18,14 @@ void convertion_en_vecteur(unsigned int* profits, unsigned int nb_entreprises, u
 }
 
 int main () {
-    const unsigned int nb_entreprises = 3;
-    const unsigned int budget = 3;
-    unsigned int profits[nb_entreprises * (budget + 1)] = {0, 1, 1, 1,  // Entreprise 0
-                                0, 0, 3, 3,  // Entreprise 1
-                                0, 1, 2, 2}; // Entreprise 2
+    const unsigned int nb_entreprises = 6;
+    const unsigned int budget = 7;
+    unsigned int profits[nb_entreprises * (budget + 1)] = {0, 1, 2, 3, 4, 5, 6, 7,  // Entreprise 0
+                                0, 2, 3, 3, 3, 3, 3, 3,  // Entreprise 1
+                                0, 4, 4, 4, 4, 4, 4, 5,  // Entreprise 2
+                                0, 0, 1, 1, 4, 4, 7, 7,  // Entreprise 3
+                                0, 2, 2, 3, 3, 4, 4, 5,  // Entreprise 4
+                                0, 1, 3, 5, 6, 7, 8, 9}; // Entreprise 5
     std::vector<std::vector<unsigned int> > vecteur_profits;
     convertion_en_vecteur(profits, nb_entreprises, budget, vecteur_profits);
     // std::vector<unsigned int> max = find_max_profit(vecteur_profits, 3);
