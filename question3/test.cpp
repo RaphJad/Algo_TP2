@@ -27,7 +27,7 @@ int main () {
                                 0, 2, 2, 3, 3, 4}; // Entreprise 4
     std::vector<std::vector<unsigned int> > vecteur_profits;
     convertion_en_vecteur(profits, nb_entreprises, budget, vecteur_profits);
-    std::vector<unsigned int> max = find_max_profit(vecteur_profits, -1);
+    std::vector<unsigned int> max = find_max_profit(vecteur_profits, 3);
     //hello
     std::cout << max[0] << std::endl;
     std::cout << max[1] << std::endl;
