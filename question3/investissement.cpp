@@ -68,8 +68,10 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
       //on indique cet investissement dans le tableau des montants
       montants[profit_max[1]] = profit_max[0];
       //on update le budget
-      updated_profits = update_budget(updated_profits, budget-profit_max[2]);
-      investissement(updated_profits, montants);
+      if(budget-profit_max[2]>0){
+        updated_profits = update_budget(updated_profits, budget-profit_max[2]);
+        investissement(updated_profits, montants);
+      }
     // else{
     //   //cas 2 le budget est plus petit que le montant maximal à investir
     //   std::vector<unsigned int> profit_max = find_max_profit(updated_profits, -1);
