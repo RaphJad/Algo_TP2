@@ -62,7 +62,7 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
   //on teste les cas de base de la récurrence
   //si le budget est nul ou qu'il n'y a plus d'investissement possible
   //donc on ne modifie pas le vecteur montant
-  if(budget <= 0 && nb_compagnies <= 0){
+  if(budget >= 0 && nb_compagnies >= 0){
     //traiter les deux cas de la récurrence:
     if(budget >= profits[0].size()){
       //cas 1 le budget est supérieur au montant maximal à investir
