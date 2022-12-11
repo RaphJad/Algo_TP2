@@ -5,6 +5,7 @@
 
 #include <assert.h>
 #include <numeric>
+#include <iostream>
 
 // Parametres:
 //   profits: profits[i][m] = le profit d'investir m dollars dans l'entreprise i
@@ -66,6 +67,7 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
     if(budget >= profits[0].size()){
       //cas 1 le budget est supérieur au montant maximal à investir
       std::vector<unsigned int> profit_max = find_max_profit(updated_profits, -1);
+      std::cout << profit_max[0] << " ," << profit_max[1] << ", " << profit_max[2] < std::endl;
       //on indique cet investissement dans le tableau des montants
       montants[profit_max[1]] = profit_max[0];
       //on update le budget
