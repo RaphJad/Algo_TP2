@@ -69,6 +69,7 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
       montants[profit_max[1]] = profit_max[0];
       //on update le budget
       int budg = budget - profit_max[2];
+      std::cout << "budget updated" << budg << std::endl;
       if(budg>0){
         updated_profits = update_budget(updated_profits, budg);
         investissement(updated_profits, montants);
