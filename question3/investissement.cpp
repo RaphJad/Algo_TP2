@@ -6,7 +6,6 @@
 #include <assert.h>
 #include <numeric>
 
-using namespace std;
 // Parametres:
 //   profits: profits[i][m] = le profit d'investir m dollars dans l'entreprise i
 //   montants: parametre de sortie: montants[i] est le montant que vous voulez investir dans l'entreprise i pour maximiser les profits.
