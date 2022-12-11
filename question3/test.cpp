@@ -34,7 +34,9 @@ int main () {
     std::vector<unsigned int> montants;
     for(int i = 0; i < vecteur_profits[0].size(); i++){
         montants.push_back(i%2);
+        std::cout << montants[i];
     }
+    std::cout << std::endl;
     std::vector<std::vector<unsigned int>> updated_profits = update_profits(vecteur_profits, montants);
     for(int i = 0; i < updated_profits.size(); i++){
         for(int j = 0; j < updated_profits[i].size(); j++){
