@@ -42,6 +42,7 @@ std::vector<std::vector<unsigned int>> update_budget(const std::vector<std::vect
 //   montants: parametre de sortie: montants[i] est le montant que vous voulez investir dans l'entreprise i pour maximiser les profits.
 void investissement(const std::vector<std::vector<unsigned int> >& profits, std::vector<unsigned int>& montants) {
   assert(profits.size() > 0 && profits.front().size() > 0);
+  std::cout << "hello" << std::endl;
   const unsigned int budget = profits.front().size() - 1;
   // for (std::vector<std::vector<unsigned int> >::const_iterator i = profits.begin(); i != profits.end(); i++) {
   //   // Note: Lorsque l'on compile avec l'option -O3, les assertions ne
