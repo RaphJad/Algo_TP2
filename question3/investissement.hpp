@@ -10,7 +10,7 @@
 //   montants: parametre de sortie: montants[i] est le montant que vous pensez devoir investir dans l'entreprise i pour maximiser les profits.
 void investissement(const std::vector<std::vector<unsigned int> >& profits, std::vector<unsigned int>& montants);
 //méthode qui retourne un vector de int qui contient le profit max du tableau ainsi que ses coordonnées dans le tableau
-std::vector<unsigned int> find_max_profit(const std::vector<std::vector<unsigned int> >& profits);
+std::vector<unsigned int> find_max_profit(const std::vector<std::vector<unsigned int> >& profits, int budget);
 std::vector<std::vector<unsigned int>> update_profits(const std::vector<std::vector<unsigned int> >& profits, std::vector<unsigned int>& montants);
 
 #endif

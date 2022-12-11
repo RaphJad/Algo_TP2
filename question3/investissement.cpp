@@ -41,22 +41,45 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
   //   // "release" est ce qui s'approche le plus de l'option -O3 avec g++
   //   assert(i->size() == budget + 1);
   // }
-  //on teste les cas de base de la réccurence
+
+
   //on met à jours le tableau des profits en fonction de ce que l'on a trouvé précédement
   std::vector<std::vector<unsigned int>> updated_profits = update_profits(profits, montants);
+  //on teste les cas de base de la récurrence
+  //si le budget est nul ou qu'il n'y a plus d'investissement possible
+  //donc on ne modifie pas le vecteur montant
+  if(budget <= 0 && nb_compagnies <= 0){
+    //traiter les deux cas de la récurrence:
+    if(budget >= profits[0].size()){
+      //cas 1 le budget est supérieur au montant maximal à investir
+      std::vector<unsigned int> profit_max = find_max_profit(updated_profits);
+
+    }
+  }
+  
   
 
 }
 
 //retourne un vecteur de unsigned int qui contient [profit p, compagnie i, cout m]
-std::vector<unsigned int> find_max_profit(const std::vector<std::vector<unsigned int> >& profits){
+std::vector<unsigned int> find_max_profit(const std::vector<std::vector<unsigned int> >& profits, int budget){
   std::vector<unsigned int> max = {0, 0, 0};
   for(int i = 0; i < profits.size(); i++){
-    for(int j = 0; j < profits[i].size(); j++){
-      if(profits[i][j] > max[0]){
-        max[0] = profits[i][j];
-        max[1] = i;
-        max[2] = j;
+    if(budget == -1){
+      for(int j = 0; j < profits[i].size(); j++){
+        if(profits[i][j] > max[0]){
+          max[0] = profits[i][j];
+          max[1] = i;
+          max[2] = j;
+        }
+      }
+    }else{
+      for(int j = 0; j < budget; j++){
+        if(profits[i][j] > max[0]){
+          max[0] = profits[i][j];
+          max[1] = i;
+          max[2] = j;
+        }
       }
     }
   }

@@ -27,12 +27,12 @@ int main () {
                                 0, 2, 2, 3, 3, 4}; // Entreprise 4
     std::vector<std::vector<unsigned int> > vecteur_profits;
     convertion_en_vecteur(profits, nb_entreprises, budget, vecteur_profits);
-    std::vector<unsigned int> max = find_max_profit(vecteur_profits);
+    std::vector<unsigned int> max = find_max_profit(vecteur_profits, -1);
     std::cout << max[0] << std::endl;
     std::cout << max[1] << std::endl;
     std::cout << max[2] << std::endl;
     std::vector<unsigned int> montants;
-    for(int i = 0; i < vecteur_profits[0].size(); i++){
+    for(int i = 0; i < vecteur_profits[0].size()-1; i++){
         montants.push_back(i%2);
         std::cout << montants[i];
     }
