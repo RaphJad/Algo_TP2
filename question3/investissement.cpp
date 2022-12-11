@@ -24,12 +24,23 @@ std::vector<std::vector<unsigned int>> update_profits(const std::vector<std::vec
   return updated_profits;
 }
 
+std::vector<std::vector<unsigned int>> update_budget(const std::vector<std::vector<unsigned int> >& profits, int budget){
+  std::vector<std::vector<unsigned int>> updated_profits;
+  for(int i = 0; i < profits.size(); i++){
+    std::vector<unsigned int> temp;
+    for(int j = 0; j < budget; j++){
+      temp.push_back(profits[i][j]);
+    }
+    updated_profits.push_back(temp);
+  }
+  return updated_profits;
+}
+
 // Parametres:
 //   profits: profits[i][m] = le profit d'investir m dollars dans l'entreprise i
 //   montants: parametre de sortie: montants[i] est le montant que vous voulez investir dans l'entreprise i pour maximiser les profits.
 void investissement(const std::vector<std::vector<unsigned int> >& profits, std::vector<unsigned int>& montants) {
   assert(profits.size() > 0 && profits.front().size() > 0);
-  const unsigned int nb_compagnies = profits.size();
   const unsigned int budget = profits.front().size() - 1;
   // for (std::vector<std::vector<unsigned int> >::const_iterator i = profits.begin(); i != profits.end(); i++) {
   //   // Note: Lorsque l'on compile avec l'option -O3, les assertions ne
@@ -45,17 +56,32 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
 
   //on met à jours le tableau des profits en fonction de ce que l'on a trouvé précédement
   std::vector<std::vector<unsigned int>> updated_profits = update_profits(profits, montants);
+  //on compte ici le nombre de compagnies restantes après avoir ajusté le tableau des profits
+  unsigned int nb_compagnies = profits.size();
   //on teste les cas de base de la récurrence
   //si le budget est nul ou qu'il n'y a plus d'investissement possible
   //donc on ne modifie pas le vecteur montant
-  // if(budget <= 0 && nb_compagnies <= 0){
-  //   //traiter les deux cas de la récurrence:
-  //   if(budget >= profits[0].size()){
-  //     //cas 1 le budget est supérieur au montant maximal à investir
-  //     std::vector<unsigned int> profit_max = find_max_profit(updated_profits);
-
-  //   }
-  // }
+  if(budget <= 0 && nb_compagnies <= 0){
+    //traiter les deux cas de la récurrence:
+    if(budget >= profits[0].size()){
+      //cas 1 le budget est supérieur au montant maximal à investir
+      std::vector<unsigned int> profit_max = find_max_profit(updated_profits, -1);
+      //on indique cet investissement dans le tableau des montants
+      montants[profit_max[1]] = profit_max[0];
+      //on update le budget
+      updated_profits = update_budget(updated_profits, budget-profit_max[2]);
+      investissement(updated_profits, montants);
+    }
+    else{
+      //cas 2 le budget est plus petit que le montant maximal à investir
+      std::vector<unsigned int> profit_max = find_max_profit(updated_profits, -1);
+      //on indique cet investissement dans le tableau des montants
+      montants[profit_max[1]] = profit_max[0];
+      //on update le budget
+      updated_profits = update_budget(updated_profits, budget-profit_max[2]);
+      investissement(updated_profits, montants);
+    }
+  }
   
   
 

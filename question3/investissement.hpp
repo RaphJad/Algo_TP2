@@ -12,5 +12,5 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
 //méthode qui retourne un vector de int qui contient le profit max du tableau ainsi que ses coordonnées dans le tableau
 std::vector<unsigned int> find_max_profit(const std::vector<std::vector<unsigned int> >& profits, int budget);
 std::vector<std::vector<unsigned int>> update_profits(const std::vector<std::vector<unsigned int> >& profits, std::vector<unsigned int>& montants);
-
+std::vector<std::vector<unsigned int>> update_budget(const std::vector<std::vector<unsigned int> >& profits, int budget);
 #endif
