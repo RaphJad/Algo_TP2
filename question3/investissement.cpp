@@ -64,7 +64,6 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
   //donc on ne modifie pas le vecteur montant
   if(budget > 0 && nb_compagnies > 0){
       std::vector<unsigned int> profit_max = find_max_profit(updated_profits, -1);
-      std::cout << profit_max[0] << " ," << profit_max[1] << ", " << profit_max[2] << std::endl;
       //on indique cet investissement dans le tableau des montants
       montants[profit_max[1]] = profit_max[0];
       //on update le budget
