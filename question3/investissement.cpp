@@ -62,10 +62,7 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
   //on teste les cas de base de la récurrence
   //si le budget est nul ou qu'il n'y a plus d'investissement possible
   //donc on ne modifie pas le vecteur montant
-  if(budget >= 0 && nb_compagnies >= 0){
-    //traiter les deux cas de la récurrence:
-    if(budget >= profits[0].size()){
-      //cas 1 le budget est supérieur au montant maximal à investir
+  if(budget > 0 && nb_compagnies > 0){
       std::vector<unsigned int> profit_max = find_max_profit(updated_profits, -1);
       std::cout << profit_max[0] << " ," << profit_max[1] << ", " << profit_max[2] << std::endl;
       //on indique cet investissement dans le tableau des montants
@@ -73,17 +70,16 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
       //on update le budget
       updated_profits = update_budget(updated_profits, budget-profit_max[2]);
       investissement(updated_profits, montants);
-    }
-    else{
-      //cas 2 le budget est plus petit que le montant maximal à investir
-      std::vector<unsigned int> profit_max = find_max_profit(updated_profits, -1);
-      std::cout << profit_max[0] << " ," << profit_max[1] << ", " << profit_max[2] << std::endl;
-      //on indique cet investissement dans le tableau des montants
-      montants[profit_max[1]] = profit_max[0];
-      //on update le budget
-      updated_profits = update_budget(updated_profits, budget-profit_max[2]);
-      investissement(updated_profits, montants);
-    }
+    // else{
+    //   //cas 2 le budget est plus petit que le montant maximal à investir
+    //   std::vector<unsigned int> profit_max = find_max_profit(updated_profits, -1);
+    //   std::cout << profit_max[0] << " ," << profit_max[1] << ", " << profit_max[2] << std::endl;
+    //   //on indique cet investissement dans le tableau des montants
+    //   montants[profit_max[1]] = profit_max[0];
+    //   //on update le budget
+    //   updated_profits = update_budget(updated_profits, budget-profit_max[2]);
+    //   investissement(updated_profits, montants);
+    // }
   }
   
 }
