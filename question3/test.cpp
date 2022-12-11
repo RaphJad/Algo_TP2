@@ -28,6 +28,7 @@ int main () {
     std::vector<std::vector<unsigned int> > vecteur_profits;
     convertion_en_vecteur(profits, nb_entreprises, budget, vecteur_profits);
     std::vector<unsigned int> max = find_max_profit(vecteur_profits, -1);
+    //hello
     std::cout << max[0] << std::endl;
     std::cout << max[1] << std::endl;
     std::cout << max[2] << std::endl;
