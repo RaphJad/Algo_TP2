@@ -66,7 +66,7 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
       std::vector<unsigned int> profit_max = find_max_profit(updated_profits, -1);
       //on indique cet investissement dans le tableau des montants
       std::cout << "temp max : " << profit_max[0] << " ," << profit_max[1] << ", " << profit_max[2] << std::endl;
-      montants[profit_max[1]] = profit_max[0];
+      montants[profit_max[1]] = profit_max[1];
       //on update le budget
       int budg = budget - profit_max[2];
       std::cout << "budget updated" << budg << std::endl;
