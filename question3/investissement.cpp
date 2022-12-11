@@ -83,8 +83,6 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
     }
   }
   
-  
-
 }
 
 //retourne un vecteur de unsigned int qui contient [profit p, compagnie i, cout m]

@@ -34,7 +34,7 @@ int main () {
     std::cout << max[2] << std::endl;
     std::vector<unsigned int> montants;
     for(int i = 0; i < vecteur_profits[0].size()-1; i++){
-        montants.push_back(i%2);
+        montants.push_back(0);
         std::cout << montants[i];
     }
     std::cout << std::endl;
@@ -45,5 +45,10 @@ int main () {
         }
         std::cout << std::endl;
     }
+    investissement(vecteur_profits, montants);
+    for(int i = 0; i < montants.size(); i++){
+        std::cout << montants[i] << ", ";
+    }
+    std::cout << std::endl;
 
 }
