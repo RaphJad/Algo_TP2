@@ -44,6 +44,7 @@ int main () {
         std::cout << std::endl;
     }
     investissement(vecteur_profits, montants);
+    std::cout << "vecteur v : ";
     for(int i = 0; i < montants.size(); i++){
         std::cout << montants[i] << ", ";
     }
