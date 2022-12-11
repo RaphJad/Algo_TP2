@@ -74,7 +74,7 @@ std::vector<unsigned int> find_max_profit(const std::vector<std::vector<unsigned
         }
       }
     }else{
-      for(int j = 0; j < budget-; j++){
+      for(int j = 0; j < budget; j++){
         if(profits[i][j] > max[0]){
           max[0] = profits[i][j];
           max[1] = i;
