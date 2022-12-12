@@ -40,6 +40,7 @@ std::vector<std::vector<unsigned int>> update_profits(const std::vector<std::vec
     updated_profits.push_back(temp);
   }
   updated_profits[company][0] = 1;
+  std::cout << "hello profits" << std::endl;
   return updated_profits;
 }
 
@@ -65,15 +66,13 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
     montants[max[1]] = max[2];
     //on calcule le nouveau budget pour choisir le prochain investissement
     int new_budget = budget - max[2];
-    if(new_budget < 0){
-      std::cout << "hello" << std::endl;
-    }
     /*on met à jour le tableau profits:
 
           -> on retire les colonnes qui ne rentrent plus dans le budget
           -> on met à 1 la première case de la ligne dans laquelle on 
              vient de trouver le max    
     */
+   std::cout << "hello" << std::endl;
    std::vector<std::vector<unsigned int>> new_profits = update_profits(profits, max[1], new_budget);
    //on appelle recursivement sur le nouveau tableau de profits trouvé
    investissement(new_profits, montants);
