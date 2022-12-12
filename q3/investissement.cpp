@@ -35,11 +35,12 @@ std::vector<std::vector<unsigned int>> update_profits(const std::vector<std::vec
   for(int i = 0; i < profits.size(); i++){
     std::vector<unsigned int> temp;
     if(new_budget > 0){
-      for(int j = 0; j < new_budget; j++){
+      for(int j = 0; j <= new_budget; j++){
         temp.push_back(profits[i][j]);
       }
     }else{
       temp.push_back(profits[i][0]);
+      std::cout << "hello" << std::endl;
     }
     updated_profits.push_back(temp);
   }
