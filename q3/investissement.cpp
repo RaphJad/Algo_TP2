@@ -59,7 +59,13 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
     }
   }
   //on test si les conditions initiales de la récurrences sont respectées
-  if(nb_compagnies > 0 && budget > 0){
+  int count_company = 0;
+  for(int i = 0; i < profits.size(); i++){
+    if(profits[i][0] == 0){
+      count_company += 1;
+    }
+  }
+  if(count_company > 0 && budget > 0){
     //si pas on ne rentre pas dans la boucle et on retourne le vecteur profit rempli de 0
     std::vector<unsigned int> max = find_max_profit(profits);
     //on ajoute le montant à investir dans le vecteur montant
