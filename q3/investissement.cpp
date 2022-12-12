@@ -39,10 +39,9 @@ std::vector<std::vector<unsigned int>> update_profits(const std::vector<std::vec
         temp.push_back(profits[i][j]);
       }
     }else{
-      temp.push_back(0);
+      temp.push_back(profits[i][0]);
     }
     updated_profits.push_back(temp);
-    // std::cout << updated_profits[i][0] << std::endl;
   }
   updated_profits[company][0] = 1;
   return updated_profits;
