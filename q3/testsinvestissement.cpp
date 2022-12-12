@@ -83,7 +83,6 @@ bool test(const std::string& nom_du_test, const std::vector<std::vector<unsigned
 
   std::vector<unsigned int> solution_programmation_dynamique;
   investissement(profits, solution_programmation_dynamique);
-  std::cout << "hello" << std::endl;
 
   std::vector<unsigned int> solution_force_brute;
   force_brute(profits, solution_force_brute);

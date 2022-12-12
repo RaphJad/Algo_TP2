@@ -64,6 +64,7 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
       count_company += 1;
     }
   }
+  std::cout << "hello" << std::endl;
   if(count_company > 0 && budget > 0){
     //si pas on ne rentre pas dans la boucle et on retourne le vecteur profit rempli de 0
     std::vector<unsigned int> max = find_max_profit(profits);
