@@ -64,10 +64,10 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
       count_company += 1;
     }
   }
-  std::cout << nb_compagnies << budget << std::endl;
   if(count_company > 0 && budget > 0){
     //si pas on ne rentre pas dans la boucle et on retourne le vecteur profit rempli de 0
     std::vector<unsigned int> max = find_max_profit(profits);
+    std::cout << nb_compagnies << budget << std::endl;
     //on ajoute le montant à investir dans le vecteur montant
     montants[max[1]] = max[2];
     //on calcule le nouveau budget pour choisir le prochain investissement
