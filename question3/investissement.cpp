@@ -43,6 +43,13 @@ std::vector<std::vector<unsigned int>> update_budget(const std::vector<std::vect
 void investissement(const std::vector<std::vector<unsigned int> >& profits, std::vector<unsigned int>& montants) {
   assert(profits.size() > 0 && profits.front().size() > 0);
   const unsigned int budget = profits.front().size() - 1;
+  //on commence par initier le vecteur V avec la bonne taille si ce n'est pas déjà le cas
+  if(montants.size() < profits.size()){
+    for(int i = 0; i < profits.size(); i++){
+      montants.push_back(0);
+    }
+  }
+  
   // for (std::vector<std::vector<unsigned int> >::const_iterator i = profits.begin(); i != profits.end(); i++) {
   //   // Note: Lorsque l'on compile avec l'option -O3, les assertions ne
   //   // sont pas incluses dans le code compile. Les boucles qui ne font

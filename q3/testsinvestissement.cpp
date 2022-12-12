@@ -55,8 +55,8 @@ void force_brute(const std::vector<std::vector<unsigned int> >& profits, std::ve
     if (solution_valide(profits, solution_courrante)) {
       const unsigned int profit_solution = profit(profits, solution_courrante);
       if (profit_solution > meilleur_profit) {
-        meilleure_solution = solution_courrante;
-        meilleur_profit = profit_solution;
+	meilleure_solution = solution_courrante;
+	meilleur_profit = profit_solution;
       }
     }
   }
