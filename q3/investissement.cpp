@@ -59,13 +59,15 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
   }
   //on test si les conditions initiales de la récurrences sont respectées
   if(nb_compagnies > 0 && budget > 0){
-    std::cout << "hello" << std::endl;
     //si pas on ne rentre pas dans la boucle et on retourne le vecteur profit rempli de 0
     std::vector<unsigned int> max = find_max_profit(profits);
     //on ajoute le montant à investir dans le vecteur montant
     montants[max[1]] = max[2];
     //on calcule le nouveau budget pour choisir le prochain investissement
     int new_budget = budget - max[2];
+    if(new_budget < 0){
+      std::cout << "hello" << std::endl;
+    }
     /*on met à jour le tableau profits:
 
           -> on retire les colonnes qui ne rentrent plus dans le budget
