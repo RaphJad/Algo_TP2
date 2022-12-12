@@ -15,7 +15,7 @@ std::vector<unsigned int> find_max_profit(const std::vector<std::vector<unsigned
     if(profits[i][0] == 0){
       for(int j = 0; j < profits[i].size(); j++){
         if(profits[i][j] > max[0]){
-          max = {profits[i][j], unsigned int(i), unsigned int(j)};
+          max = {profits[i][j], i, j};
         }
       }
     }
@@ -71,6 +71,7 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
              vient de trouver le max    
     */
    std::vector<std::vector<unsigned int>> new_profits = update_profits(profits, max[1], new_budget);
+   //on appelle recursivement sur le nouveau tableau de profits trouvé
    investissement(new_profits, montants);
   }
 }
