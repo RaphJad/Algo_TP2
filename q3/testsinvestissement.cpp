@@ -83,6 +83,7 @@ bool test(const std::string& nom_du_test, const std::vector<std::vector<unsigned
 
   std::vector<unsigned int> solution_programmation_dynamique;
   investissement(profits, solution_programmation_dynamique);
+  std::cout << "hello" << std::endl;
 
   std::vector<unsigned int> solution_force_brute;
   force_brute(profits, solution_force_brute);
@@ -135,7 +136,6 @@ bool test_cinq_entreprises() {
 							 0, 2, 2, 3, 3, 4}; // Entreprise 4
   std::vector<std::vector<unsigned int> > vecteur_profits;
   convertion_en_vecteur(profits, nb_entreprises, budget, vecteur_profits);
-  std::cout << "hello" << std::endl;
   return test("5 entreprises", vecteur_profits);
 }
 
