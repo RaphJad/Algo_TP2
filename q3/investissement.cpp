@@ -16,7 +16,7 @@ std::vector<unsigned int> find_max_profit(const std::vector<std::vector<unsigned
     if(profits[i][0] == 0){
       for(int j = 1; j < profits[i].size(); j++){
         if(int(profits[i][j]/j) > max[0]){
-          max = {unsigned int(profits[i][j]/j), i, j};
+          max = {int(profits[i][j]/j), i, j};
         }
       }
     }
