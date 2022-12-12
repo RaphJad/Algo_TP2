@@ -14,9 +14,9 @@ std::vector<unsigned int> find_max_profit(const std::vector<std::vector<unsigned
     //lorsqu'une compagnie a déjà donné un max, on met la première valeur de sa ligne à 1 et non plus à 0
     //afin de ne plus prendre de maximum dans cette ligne
     if(profits[i][0] == 0){
-      for(int j = 0; j < profits[i].size(); j++){
-        if(profits[i][j] > max[0]){
-          max = {profits[i][j], i, j};
+      for(int j = 1; j < profits[i].size(); j++){
+        if(int(profits[i][j]/j) > max[0]){
+          max = {unsigned int(profits[i][j]/j), i, j};
         }
       }
     }
@@ -55,6 +55,15 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
   assert(profits.size() > 0 && profits.front().size() > 0);
   const unsigned int nb_compagnies = profits.size();
   const unsigned int budget = profits.front().size() - 1;
+  //on construit le tableau contenant le rapport profit/cout
+  std::vector<std::vector<unsigned int>> profit_cout;
+  // for(int i = 0; i < profits.size(); i++){
+  //   std::vector<unsigned int> p_c_temp;
+  //   p_c_temp.push_back(profits[i][0]);
+  //   for(int j = 1; j < profits[i].size(); j++){
+  //     p_c_temp.push_back(int(profits[i][j]/))
+  //   }
+  // }
   //on commence par construire le vecteur des montant en le remplissant de 0 si il n'a pas la bonne taille 
   if(montants.size() < nb_compagnies){
     //cas du premier passage dans la méthode
