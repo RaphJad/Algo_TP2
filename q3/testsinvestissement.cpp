@@ -198,15 +198,15 @@ bool test_surplus_de_budget() {
 int main(void) {
   test_simple();
   std::cout << "_____________________" << "test simple" << std::endl;
-  // test_cinq_entreprises();
-  // std::cout << "_____________________" << "test cinq entreprise" << std::endl;
-  // test_six_entreprises();
-  // std::cout << "_____________________" << "test 6 entreprises" << std::endl;
-  // test_unimodal();
-  // std::cout << "_____________________" << "test unimodal" << std::endl;
-  // test_grosse_instance();	// L'algorithme de force brute prend beaucoup de temps pour s'executer sur cette instance. C'est normal.
-  // std::cout << "_____________________" << "test grosse intance" << std::endl;
-  // test_surplus_de_budget();
-  // std::cout << "_____________________" << "test surplus de budget" << std::endl;
+  test_cinq_entreprises();
+  std::cout << "_____________________" << "test cinq entreprise" << std::endl;
+  test_six_entreprises();
+  std::cout << "_____________________" << "test 6 entreprises" << std::endl;
+  test_unimodal();
+  std::cout << "_____________________" << "test unimodal" << std::endl;
+  test_grosse_instance();	// L'algorithme de force brute prend beaucoup de temps pour s'executer sur cette instance. C'est normal.
+  std::cout << "_____________________" << "test grosse intance" << std::endl;
+  test_surplus_de_budget();
+  std::cout << "_____________________" << "test surplus de budget" << std::endl;
   return 0;
 }
