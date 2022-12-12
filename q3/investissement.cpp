@@ -78,7 +78,7 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
           -> on met à 1 la première case de la ligne dans laquelle on 
              vient de trouver le max    
     */
-   std::cout << max[1] << ", " << new_budget << std::endl;
+   std::cout << count_company << ", " << max[1] << ", " << new_budget << std::endl;
    std::vector<std::vector<unsigned int>> new_profits = update_profits(profits, max[1], new_budget);
    //on appelle recursivement sur le nouveau tableau de profits trouvé
    investissement(new_profits, montants);
