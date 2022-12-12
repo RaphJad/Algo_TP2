@@ -51,13 +51,13 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
   const unsigned int nb_compagnies = profits.size();
   const unsigned int budget = profits.front().size() - 1;
   //on commence par construire le vecteur des montant en le remplissant de 0 si il n'a pas la bonne taille
+  std::cout << "hello" << std::endl;
   if(montants.size() < nb_compagnies){
     //cas du premier passage dans la méthode
     for(int i = 0; i <= budget; i++){
       montants.push_back(0);
     }
   }
-  
   //on test si les conditions initiales de la récurrences sont respectées
   if(nb_compagnies > 0 && budget > 0){
     //si pas on ne rentre pas dans la boucle et on retourne le vecteur profit rempli de 0
