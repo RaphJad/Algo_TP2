@@ -31,7 +31,7 @@ Cette méthode permet aussi de mettre la première valeur de la compagnie pour l
 on vient de trouver le max à 1 afin de ne plus chercher de max dans cette ligne.
 */
 std::vector<std::vector<unsigned int>> update_profits(const std::vector<std::vector<unsigned int> >& profits, int new_budget, int company){
-  std::vector<std::vector<unsigned int>> updated_profits;for(int i)
+  std::vector<std::vector<unsigned int>> updated_profits;
   for(int i = 0; i < profits.size(); i++){
     std::vector<unsigned int> temp;
     for(int j = 0; j < new_budget; j++){
