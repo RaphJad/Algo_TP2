@@ -57,7 +57,7 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
       montants.push_back(0);
     }
   }
-  std::cout << "hello" << std::endl;
+  
   //on test si les conditions initiales de la récurrences sont respectées
   if(nb_compagnies > 0 && budget > 0){
     //si pas on ne rentre pas dans la boucle et on retourne le vecteur profit rempli de 0
