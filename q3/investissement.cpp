@@ -31,16 +31,15 @@ Cette méthode permet aussi de mettre la première valeur de la compagnie pour l
 on vient de trouver le max à 1 afin de ne plus chercher de max dans cette ligne.
 */
 std::vector<std::vector<unsigned int>> update_profits(const std::vector<std::vector<unsigned int> >& profits, int new_budget, int company){
-  std::vector<std::vector<unsigned int>> updated_profits;
+  std::vector<std::vector<unsigned int>> updated_profits;for(int i)
   for(int i = 0; i < profits.size(); i++){
     std::vector<unsigned int> temp;
-    for(int j = 0; j < profits[i].size(); j++){
+    for(int j = 0; j < new_budget; j++){
       temp.push_back(profits[i][j]);
     }
     updated_profits.push_back(temp);
   }
   updated_profits[company][0] = 1;
-  std::cout << "hello profits" << std::endl;
   return updated_profits;
 }
 
@@ -78,7 +77,6 @@ void investissement(const std::vector<std::vector<unsigned int> >& profits, std:
           -> on met à 1 la première case de la ligne dans laquelle on 
              vient de trouver le max    
     */
-  //  std::cout << count_company << ", " << max[1] << ", " << new_budget << std::endl;
    std::vector<std::vector<unsigned int>> new_profits = update_profits(profits, max[1], new_budget);
    //on appelle recursivement sur le nouveau tableau de profits trouvé
    investissement(new_profits, montants);
